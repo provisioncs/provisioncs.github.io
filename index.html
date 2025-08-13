@@ -71,20 +71,39 @@
             background: linear-gradient(90deg, #a084e8 0%, #7e30e1 100%);
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95SJ3Y468W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-95SJ3Y468W');
+    </script>
 </head>
 <body>
     <div class="linktree-container">
         <img src="https://i.imgur.com/Zs4tREV.jpeg" alt="Avatar" class="avatar">
         <h1>ProVisionCS</h1>
         <div class="linktree-list">
-            <a href="https://clash.gg/r/PROVISIONCS" target="_blank">🎁 3 FREE CASES 🎁</a>
-            <a id="contact-link" href="mailto:ravenstudiosbusinessip@gmail.com" target="_blank">Contact ME 📩</a>
+            <a id="clashgg-link"
+               href="https://clash.gg/r/PROVISIONCS"
+               target="_blank">
+               🎁 3 FREE CASES 🎁
+            </a>
+            <a id="contact-link"
+               href="mailto:ravenstudiosbusinessip@gmail.com"
+               target="_blank">
+               Contact ME 📩
+            </a>
         </div>
     </div>
     <!-- Popup Modal for Desktop -->
-    <div id="email-popup" style="display:none; position:fixed;top:50%;left:50%;transform:translate(-50%,-50%); background:#fff;border-radius:10px;padding:25px;box-shadow:0 2px 14px rgba(126,48,225,0.18);z-index:1000;">
+    <div id="email-popup" style="display:none; position:fixed;top:50%;left:50%;transform:translate(-50%,-50%); background:#fff;border-radius:10px;padding:25px;box-shadow:0 2px 14px rgba(126,48,225,0.1;">
         <span style="font-size:1.1em;">Email: <b>ravenstudiosbusinessip@gmail.com</b></span>
-        <button onclick="document.getElementById('email-popup').style.display='none'" style="margin-top:10px;padding:5px 12px;border-radius:7px;border:none;background:#7e30e1;color:#fff;cursor:pointer;">Close</button>
+        <button onclick="document.getElementById('email-popup').style.display='none'" style="margin-top:10px;padding:5px 12px;border-radius:7px;border:none;background:#7e30e1;color:#fff;cursor:pointer;">
+            Fechar
+        </button>
     </div>
     <script>
     function isMobile() {
@@ -94,7 +113,24 @@
         if (!isMobile()) {
             e.preventDefault();
             document.getElementById("email-popup").style.display = "block";
+            // Track popup open instead of mailto
+            gtag('event', 'popup_open', {
+              'event_category': 'contact',
+              'event_label': 'Contact Popup Open'
+            });
+        } else {
+            // Track mailto click on mobile
+            gtag('event', 'click', {
+              'event_category': 'contact',
+              'event_label': 'Contact Mailto Click'
+            });
         }
+    });
+    document.getElementById("clashgg-link").addEventListener("click", function() {
+        gtag('event', 'click', {
+          'event_category': 'link',
+          'event_label': 'ClashGG Link'
+        });
     });
     </script>
 </body>
