@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Linktree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #a084e8 0%, #7e30e1 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .linktree-container {
+            background: #fff;
+            padding: 32px 28px 28px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(126,48,225,0.18);
+            max-width: 350px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #c5a3ff;
+        }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 14px rgba(126,48,225,0.18);
+            margin-bottom: 18px;
+            border: 3px solid #7e30e1;
+            background: #222;
+        }
+        h1 {
+            margin: 0 0 12px 0;
+            font-size: 1.5em;
+            color: #7e30e1;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .linktree-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 12px;
+        }
+        .linktree-list a {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(90deg, #7e30e1 60%, #a084e8 100%);
+            padding: 14px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.09em;
+            font-weight: 500;
+            transition: background 0.2s;
+            box-shadow: 0 2px 10px rgba(126,48,225,0.09);
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        .linktree-list a:hover {
+            background: linear-gradient(90deg, #a084e8 0%, #7e30e1 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="linktree-container">
+        <img src="linktree-avatar.png" alt="Avatar" class="avatar">
+        <h1>ProvisionCS</h1>
+        <div class="linktree-list">
+            <a href="https://clash.gg/r/PROVISIONCS" target="_blank">🎁 3 FREE CASES 🎁</a>
+            <a href="mailto:ravenstudiosbusinessip@gmail.com" target="_blank">Contact ME 📩</a>
+        </div>
+    </div>
+</body>
+</html>
