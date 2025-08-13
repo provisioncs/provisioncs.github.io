@@ -50,7 +50,7 @@
             gap: 15px;
             margin-top: 12px;
         }
-        .linktree-list a {
+        .linktree-list a, .linktree-list button {
             text-decoration: none;
             color: #fff;
             background: linear-gradient(90deg, #7e30e1 60%, #a084e8 100%);
@@ -66,8 +66,9 @@
             justify-content: center;
             align-items: center;
             gap: 6px;
+            cursor: pointer;
         }
-        .linktree-list a:hover {
+        .linktree-list a:hover, .linktree-list button:hover {
             background: linear-gradient(90deg, #a084e8 0%, #7e30e1 100%);
         }
     </style>
@@ -94,40 +95,28 @@
                target="_blank">
                🎁 3 FREE CASES 🎁
             </a>
-            <a id="contact-link"
-               href="mailto:ravenstudiosbusinessip@gmail.com"
-               target="_blank">
+            <!-- Substitui link mailto por botão -->
+            <button id="contact-link">
                Contact ME 📩
-            </a>
+            </button>
         </div>
     </div>
     <!-- Popup Modal for Desktop -->
-    <div id="email-popup" style="display:none; position:fixed;top:50%;left:50%;transform:translate(-50%,-50%); background:#fff;border-radius:10px;padding:25px;box-shadow:0 2px 14px rgba(126,48,225,0.1[...]
+    <div id="email-popup" style="display:none; position:fixed;top:50%;left:50%;transform:translate(-50%,-50%); background:#fff;border-radius:10px;padding:25px;box-shadow:0 2px 14px rgba(126,48,225,0.1);z-index:99;">
         <span style="font-size:1.1em;">Email: <b>ravenstudiosbusinessip@gmail.com</b></span>
-        <button onclick="document.getElementById('email-popup').style.display='none'" style="margin-top:10px;padding:5px 12px;border-radius:7px;border:none;background:#7e30e1;color:#fff;cursor:pointer[...]
+        <button onclick="document.getElementById('email-popup').style.display='none'" style="margin-top:10px;padding:5px 12px;border-radius:7px;border:none;background:#7e30e1;color:#fff;cursor:pointer;">
             Fechar
         </button>
     </div>
     <script>
-    function isMobile() {
-        return /Mobi|Android|iPhone/i.test(navigator.userAgent);
-    }
     document.getElementById("contact-link").addEventListener("click", function(e) {
-        if (!isMobile()) {
-            e.preventDefault();
-            document.getElementById("email-popup").style.display = "block";
-            // Track popup open instead of mailto
-            gtag('event', 'popup_open', {
-              'event_category': 'contact',
-              'event_label': 'Contact Popup Open'
-            });
-        } else {
-            // Track mailto click on mobile
-            gtag('event', 'click', {
-              'event_category': 'contact',
-              'event_label': 'Contact Mailto Click'
-            });
-        }
+        e.preventDefault();
+        document.getElementById("email-popup").style.display = "block";
+        // Track popup open
+        gtag('event', 'popup_open', {
+          'event_category': 'contact',
+          'event_label': 'Contact Popup Open'
+        });
     });
     document.getElementById("clashgg-link").addEventListener("click", function() {
         gtag('event', 'click', {
